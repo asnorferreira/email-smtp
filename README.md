@@ -1,50 +1,54 @@
-# Documentação do Projeto
+# Project Documentation
 
-## Requisitos do Projeto
-1. Ter a funcionalidade de cadastrar o e-mail e o nome de uma pessoa que deseja receber a Newsletter.
-2. Ter um endpoint que mande o texto do e-mail no body da requisição e esse texto deverá ser enviado via e-mail para todos os e-mails cadastrados.
-3. No corpo do e-mail enviado deverá ter o nome do cadastro da pessoa que está recebendo a Newsletter.
-4. Utilizar Template Engine para criar um template para o e-mail.
+## Project Requirements
+1. Have the functionality to register an email and name of a person who wishes to receive the Newsletter.
+2. Have an endpoint that sends the email text in the request body, and this text should be sent via email to all registered emails.
+3. The body of the sent email should contain the name of the person receiving the Newsletter.
+4. Use Template Engine to create an email template.
 
-## Configuração do Ambiente
-1. Clone o repositório do projeto: `git clone https://github.com/seu-usuario/nome-do-repositorio.git`
-2. Instale as dependências do projeto: `npm install`
-3. Configure as variáveis de ambiente no arquivo `.env` na raiz do projeto. Exemplo:
+## Environment Setup
+1. Clone the project repository: `git clone https://github.com/your-username/project-name.git`
+2. Install project dependencies: `npm install`
+3. Configure environment variables in the `.env` file at the project root. Example:
 
-- EMAIL_HOST=seu-email-host
-- EMAIL_PORT=porta-do-email
-- EMAIL_USER=seu-email-usuario
-- EMAIL_PASS=sua-senha-de-email
-- EMAIL_FROM=seu-email-de-envio
+
+- EMAIL_HOST=your-email-host
+- EMAIL_PORT=email-port
+- EMAIL_USER=your-email-user
+- EMAIL_PASS=your-email-password
+- EMAIL_FROM=your-sending-email
 
 ---
 
-## Como Executar o Projeto
-1. Inicie o servidor: `npm start`
-2. Acesse os endpoints da API utilizando o cliente de API de sua preferência (Postman, Insomnia, etc.).
 
-## Endpoints da API
+## How to Run the Project
+1. Start the server: `npm start`
+2. Access the API endpoints using your preferred API client (Postman, Insomnia, etc.).
+
+## API Endpoints
 1. **POST /register**
-- Cadastra um e-mail para receber a Newsletter.
-- Corpo da requisição:
+- Registers an email to receive the Newsletter.
+- Request body:
   ```json
   {
-    "email": "exemplo@email.com"
+    "email": "example@email.com"
   }
   ```
 2. **POST /send-mail**
-- Envia um e-mail para todos os e-mails cadastrados na Newsletter.
-- Corpo da requisição:
+- Sends an email to all registered emails in the Newsletter.
+- Request body:
   ```json
   {
-    "subject": "Assunto do E-mail",
-    "body": "Corpo do E-mail"
+    "subject": "Email Subject",
+    "body": "Email Body"
   }
   ```
 
-## Tecnologias Utilizadas
+## Technologies Used
 - Node.js
 - Express.js
 - Nodemailer
 - Handlebars
+
+
 
