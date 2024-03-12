@@ -1,0 +1,56 @@
+# Envio de emails
+
+## SMTP - Simple Mails Transfer Protocol
+
+### Host - SMTP - Destination
+
+---
+
+## Serviços de E-mail (Servidores SMTP)
+- Sendgrid 
+- Mailtrap
+- Mailgum
+
+---
+
+### Host: endereço do servidor
+### Port: porta do servidor
+### username: usuario do servidor
+### password: senha de autenticação
+
+
+## O que é?
+### Protocolo padrão utilizado para envio de mensagens de correio eletrônico;
+
+---
+
+## Envio de E-mail
+### Nome: Maria
+### E-mail: maria@gmail.com
+
+Cliente -> Servidor SMTP gmail -> Servidor SMTP outlook -> Cliente/2
+
+---
+
+## Nodemailer
+
+### Biblioteca para Node.js que possibilita o envio de e-mails em aplicações através de um servidor SMTP
+
+ex:
+
+export const transport = nodemailer.createTransport({
+    host: "",
+    port: ,
+    secure: false/true,
+    auth: {
+        user: '',
+        pass: '',
+    },
+});
+
+transport.sendEmail({
+    from: 'student cubos academy <nao-resopnder@classcubosacademy.com.br>',
+    to: 'student.ferreira@cubos.academy',
+    subject: "Notes about login",
+    text: "Login was successful",
+});
