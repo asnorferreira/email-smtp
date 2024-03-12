@@ -11,3 +11,12 @@ export const transport = nodemailer.createTransport({
     password: process.env.EMAIL_PASS,
   },
 });
+
+export const send = (to, subject, body) => {
+  transport.sendMail({
+    from: `${process.env.EMAIL_NAME} <${process.env.EMAIL_FROM}>`,
+    to,
+    subject,
+    text: body,
+  });
+};
