@@ -1,30 +1,50 @@
-![](https://i.imgur.com/xG74tOh.png)
+# Documentação do Projeto
 
-# Exercício 01
+## Requisitos do Projeto
+1. Ter a funcionalidade de cadastrar o e-mail e o nome de uma pessoa que deseja receber a Newsletter.
+2. Ter um endpoint que mande o texto do e-mail no body da requisição e esse texto deverá ser enviado via e-mail para todos os e-mails cadastrados.
+3. No corpo do e-mail enviado deverá ter o nome do cadastro da pessoa que está recebendo a Newsletter.
+4. Utilizar Template Engine para criar um template para o e-mail.
 
-## Desenvolver API para envio de Newsletter
+## Configuração do Ambiente
+1. Clone o repositório do projeto: `git clone https://github.com/seu-usuario/nome-do-repositorio.git`
+2. Instale as dependências do projeto: `npm install`
+3. Configure as variáveis de ambiente no arquivo `.env` na raiz do projeto. Exemplo:
 
-Você acabou de receber uma proposta freelancer para implementar um sistema para envio de Newsletter. Newsletter é um tipo de E-mail informativo com intuito de compartilhar informações recorrentes.
-
-Sua tarefa será criar uma API em Node.js que atendam os requisitos abaixo.
-
-1 - Deverá ter a funcionalidade de cadastrar o email e o nome de uma pessoa que deseja receber a Newsletter.
-
-2 - Deverá ter um endpoint que manda o texto do email no body da requisição e esse texto deverá ser enviado via e-mail para todos os e-mails cadastrados
-
-2 - No corpo do E-mail enviado deverá ter o nome do cadastro da pessoa que ta recebendo a Newsletter.
-
-Obs.: Será um grande diferencial criar um template para o e-mail utilizando `Template Engine`.
-
-Surpreenda o cliente com sua experiência, criatividade e entregue uma bela solução para o problema proposto.
+- EMAIL_HOST=seu-email-host
+- EMAIL_PORT=porta-do-email
+- EMAIL_USER=seu-email-usuario
+- EMAIL_PASS=sua-senha-de-email
+- EMAIL_FROM=seu-email-de-envio
 
 ---
 
-Preencha a checklist para finalizar o exercício:
+## Como Executar o Projeto
+1. Inicie o servidor: `npm start`
+2. Acesse os endpoints da API utilizando o cliente de API de sua preferência (Postman, Insomnia, etc.).
 
-- [ ] Resolver o exercício revendo a aula se necessário
-- [ ] Adicionar as mudanças aos commits (`git add .` para adicionar todos os arquivos ou `git add nome_do_arquivo` para adicionar um arquivo específico)
-- [ ] Commitar a cada mudança significativa ou na finalização do exercício (`git commit -m "Mensagem do commit"`)
-- [ ] Pushar os commits no seu fork na origem (`git push origin nome-da-branch`)
+## Endpoints da API
+1. **POST /register**
+- Cadastra um e-mail para receber a Newsletter.
+- Corpo da requisição:
+  ```json
+  {
+    "email": "exemplo@email.com"
+  }
+  ```
+2. **POST /send-mail**
+- Envia um e-mail para todos os e-mails cadastrados na Newsletter.
+- Corpo da requisição:
+  ```json
+  {
+    "subject": "Assunto do E-mail",
+    "body": "Corpo do E-mail"
+  }
+  ```
 
-###### tags: `back-end` `nodeJS` `PostgreSQL` `API REST` `deploy` `query builder` `envio de emails`
+## Tecnologias Utilizadas
+- Node.js
+- Express.js
+- Nodemailer
+- Handlebars
+
