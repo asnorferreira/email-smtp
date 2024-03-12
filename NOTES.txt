@@ -60,14 +60,15 @@ transport.sendEmail({
 
 
 
-/*
+import { compilatorHtml } from "../utils/compilatorHtml.js";
+
+
 export const user = {
   name: "Asnor Cubos",
   email: "asnorferreira@cubos.academy",
   password: "123Asc",
 };
-*/
-/*
+
 export const login = async (req, res) => {
   const { email, password } = req.body;
 
@@ -97,3 +98,4 @@ export const login = async (req, res) => {
     });
   }
 }; 
+
