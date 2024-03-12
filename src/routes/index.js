@@ -1,6 +1,6 @@
 import express from 'express';
-import { login } from '../controller/login.js';
+import { sendMail } from '../controller/index.js';
 
 export const router = express();
 
-router.post('/login', login);
+router.post('/send', sendMail);
